@@ -1,0 +1,42 @@
+{
+  "dataset_summary": {
+    "raw_rows": 22110,
+    "cleaned_valid_rows": 21891,
+    "duplicates_removed": 110,
+    "zero_token_pings_excluded": 110,
+    "pcie_counter_resets_imputed": 177,
+    "preemption_positive_rate": 0.0396
+  },
+  "cross_validation_5fold_timeseries": {
+    "mean_pr_auc": 0.7639,
+    "std_pr_auc": 0.0559,
+    "mean_roc_auc": 0.9792
+  },
+  "test_set_comparison": {
+    "logistic_regression_baseline": {
+      "pr_auc": 0.7695,
+      "roc_auc": 0.9846,
+      "brier_score": 0.0538,
+      "f2_score": 0.7026
+    },
+    "random_forest_pipeline": {
+      "pr_auc": 0.8012,
+      "roc_auc": 0.992,
+      "brier_score": 0.021,
+      "f2_score": 0.8626
+    },
+    "hist_gradient_boosting_uncalibrated": {
+      "pr_auc": 0.8293,
+      "roc_auc": 0.9914,
+      "brier_score": 0.0238,
+      "f2_score": 0.8413
+    },
+    "hist_gradient_boosting_isotonic_calibrated": {
+      "pr_auc": 0.8329,
+      "roc_auc": 0.9922,
+      "brier_score": 0.0127,
+      "f2_score_at_opt_threshold": 0.8578,
+      "optimal_cost_threshold": 0.38
+    }
+  }
+}
